@@ -10,13 +10,11 @@ import (
 	"net"
 	"net/url"
 	"os"
-	"strconv"
-	"strings"
 )
 
 func Fire( fire func(*models.Try) *models.Try, trys []*models.Try) *models.Boomb {
-	for _, bob := range trys {
-		result := fire(bob)
+	for _, try := range trys {
+		result := fire(try)
 		if result != nil && result.Status {
 			return &models.Boomb{result.Data.Username,result.Data.Password}
 		}
@@ -69,8 +67,6 @@ func ReadDictFile(user string, authtickes *[]string) *[]string{
 	return authtickes
 }
 
-
-
 func ParserTarget(target string) models.Try {
 	var info models.Try
 	parser, err := url.Parse(target)
@@ -84,7 +80,6 @@ func ParserTarget(target string) models.Try {
 		fmt.Println("Target Host is None")
 		os.Exit(1)
 	}
-
 
 	info.Target = host
 	info.Protocal = parser.Scheme
@@ -105,7 +100,6 @@ func ParserTarget(target string) models.Try {
 	}else{
 		info.Port = port
 	}
-
 	return info
 }
 
@@ -118,32 +112,29 @@ func main() {
 	//targethost := brustype.String("host", "", "Your target host")
 	//targetport := brustype.String("port", "", "Your target port")
 
-	target := brustype.String("target", "", "your target")
-
-	userdict := brustype.String("user", "", "Your username filepath")
-	passwddict := brustype.String("pass", "", "Your password filepath")
+	target := brustype.String("host", "http://127.0.0.1:8080", "your target")
+	userdict := brustype.String("user", "test/dict/user.list", "Your username filepath")
+	passwddict := brustype.String("pass", "test/dict/pass.list", "Your password filepath")
 
 	targetinfo := ParserTarget(*target)
 
 	var user []string
 	var pass []string
-	var trys []models.Try
+	var trys []*models.Try
 	var boomb []models.Boomb
 
 	usernames := &user
 	passwords := &pass
 	boombs := &boomb
-	boombtrys := &trys
 
 	usernames = ReadDictFile(*userdict, usernames)
 	passwords = ReadDictFile(*passwddict, passwords)
 	boombs = ArrangeSlic(usernames, passwords, boombs)
 
-	for
-
-	in := models.Boomb{*userdict,*passwddict}
-
-	crackdata := models.Try{"127.0.0.1", "8080","http", &in, false}
+	for _,boomb := range *boombs {
+		crackdata := models.Try{targetinfo.Target, targetinfo.Port,targetinfo.Protocal, &boomb, false}
+		trys = append(trys, &crackdata)
+	}
 
 	switch cmd {
 
@@ -153,13 +144,17 @@ func main() {
 				fmt.Println("Please make sure your dict was exists")
 				os.Exit(0)
 			}
-			Fire(burp.SSHBrust, &crackdata)
+			Fire(burp.SSHBrust, trys)
 			//fmt.Println("ssh brust",*userdict, *passwddict)
 		}
 	case "http":
 		if err := brustype.Parse(os.Args[2:]); err == nil {
-			fmt.Println("http brust",*userdict, *passwddict )
-
+			if !IsFileExists(*userdict) || !IsFileExists(*passwddict) {
+				fmt.Println("Please make sure your dict was exists")
+				os.Exit(0)
+			}
+			Fire(burp.HTTPBrust, trys)
+			//fmt.Println("ssh brust",*userdict, *passwddict)
 		}
 
 	default:
@@ -168,31 +163,5 @@ func main() {
 		fmt.Println("\tboomb ssh --user userdict --pass passdict")
 		fmt.Println("\tboomb http --user userdict --pass passdict")
 
-	}
-}
-
-func test() {
-
-	var user []string
-	var pass []string
-	var boomb []models.Boomb
-	usernames := &user
-	passwords := &pass
-	boombs := &boomb
-
-	usernames = ReadDictFile("test/dict/user.list", usernames)
-	passwords = ReadDictFile("test/dict/pass.list", passwords)
-
-	boombs = ArrangeSlic(usernames, passwords, boombs)
-
-	for _, v := range *boombs {
-		crackData := models.Boomb{v.Username, v.Password}
-		testdata := models.Try{"baidu.com", "80","http", &crackData, false}
-
-		res := Fire(burp.SSHBrust, &testdata)
-
-		if res != nil {
-			fmt.Println("Cracked: ", res.Username, res.Password)
-		}
 	}
 }
