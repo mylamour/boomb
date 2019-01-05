@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5c1e224-7755-4f02-b899-0cbcd82b73be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/models.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/boohttp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/boohttp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,16 +15,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+            <state relative-caret-position="392">
+              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
               <folding>
                 <element signature="n#!!block;n#ArrangeSlic#0" />
                 <element signature="n#!!block;n#ReadDictFile#0" />
+                <element signature="n#!!block;n#ParserTarget#0" />
                 <element signature="n#!!block;n#LoadAttack#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Readme.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -92,7 +101,6 @@
         <option value="$PROJECT_DIR$/src/model.go" />
         <option value="$PROJECT_DIR$/model.go" />
         <option value="$PROJECT_DIR$/config/config.go" />
-        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/test/utils.go" />
         <option value="$PROJECT_DIR$/test/auth.ticket" />
         <option value="$PROJECT_DIR$/src/boossh_test.go" />
@@ -104,6 +112,7 @@
         <option value="$PROJECT_DIR$/src/boohttp.go" />
         <option value="$PROJECT_DIR$/config/models.go" />
         <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/Readme.md" />
       </list>
     </option>
   </component>
@@ -136,16 +145,6 @@
               <item name="boomb" type="b2602c69:ProjectViewProjectNode" />
               <item name="boomb" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="boomb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomb" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boomb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -154,6 +153,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
@@ -196,7 +196,7 @@
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005208" side_tool="true" weight="0.32946146" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="3" visible="true" weight="0.32946146" />
       <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49947917" weight="0.32946146" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.26821542" />
@@ -239,6 +239,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add cli options" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cli options" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
@@ -252,6 +256,7 @@
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
+            <element signature="n#!!block;n#ParserTarget#0" />
             <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
         </state>
@@ -288,6 +293,7 @@
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
+            <element signature="n#!!block;n#ParserTarget#0" />
             <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
         </state>
@@ -314,6 +320,7 @@
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
+            <element signature="n#!!block;n#ParserTarget#0" />
             <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
         </state>
@@ -340,6 +347,7 @@
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
+            <element signature="n#!!block;n#ParserTarget#0" />
             <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
         </state>
@@ -350,7 +358,6 @@
     <entry file="file://$PROJECT_DIR$/src/model.go" />
     <entry file="file://$PROJECT_DIR$/model.go" />
     <entry file="file://$PROJECT_DIR$/config/config.go" />
-    <entry file="file://$PROJECT_DIR$/Readme.md" />
     <entry file="file://$PROJECT_DIR$/test/utils.go" />
     <entry file="file://$PROJECT_DIR$/test/ssh.go" />
     <entry file="file://$PROJECT_DIR$/test/auth.ticket">
@@ -424,13 +431,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+        <state relative-caret-position="392">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
+            <element signature="n#!!block;n#ParserTarget#0" />
             <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
