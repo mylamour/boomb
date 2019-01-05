@@ -1,5 +1,7 @@
 package models
 
+import "os"
+
 //type Burst interface {
 //	Fire()
 //}
@@ -20,3 +22,20 @@ type Boomb struct {
 
 var userDictPath = ""
 var passwdDictPath = ""
+
+
+func IsFileExists(filename string) bool {
+
+	if _, err := os.Stat(filename); err != nil {
+		if os.IsNotExist(err) {
+			return  false
+		}else {
+			return true
+		}
+	}
+	return true
+}
+
+func IsPortOpen(port string){
+
+}

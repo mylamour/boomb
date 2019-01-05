@@ -16,6 +16,7 @@ func Fire( fire func(*models.Try) *models.Try, trys []*models.Try) *models.Boomb
 	for _, try := range trys {
 		result := fire(try)
 		if result != nil && result.Status {
+			fmt.Println("[Target Cracked] \nusername:password = ", result.Data.Username,":",result.Data.Password)
 			return &models.Boomb{result.Data.Username,result.Data.Password}
 		}
 	}
@@ -30,19 +31,6 @@ func ArrangeSlic( usernames *[]string, passwords *[]string, result *[]models.Boo
 		}
 	}
 	return result
-}
-
-func IsFileExists(filename string) bool {
-
-	if _, err := os.Stat(filename); err != nil {
-		if os.IsNotExist(err) {
-			return  false
-		}else {
-			return true
-		}
-	}
-
-	return true
 }
 
 func ReadDictFile(user string, authtickes *[]string) *[]string{
@@ -103,21 +91,7 @@ func ParserTarget(target string) models.Try {
 	return info
 }
 
-func main() {
-
-	cmd := os.Args[1]
-
-	brustype := flag.NewFlagSet("brustype",flag.ContinueOnError)
-
-	//targethost := brustype.String("host", "", "Your target host")
-	//targetport := brustype.String("port", "", "Your target port")
-
-	target := brustype.String("host", "http://127.0.0.1:8080", "your target")
-	userdict := brustype.String("user", "test/dict/user.list", "Your username filepath")
-	passwddict := brustype.String("pass", "test/dict/pass.list", "Your password filepath")
-
-	targetinfo := ParserTarget(*target)
-
+func LoadAttack(userdict string, passdict string, targetinfo models.Try) []*models.Try{
 	var user []string
 	var pass []string
 	var trys []*models.Try
@@ -127,41 +101,48 @@ func main() {
 	passwords := &pass
 	boombs := &boomb
 
-	usernames = ReadDictFile(*userdict, usernames)
-	passwords = ReadDictFile(*passwddict, passwords)
+	if models.IsFileExists(userdict) {
+		usernames = ReadDictFile(userdict, usernames)
+	}else {
+		*usernames = append(*usernames, userdict)
+	}
+
+	passwords = ReadDictFile(passdict, passwords)
+
 	boombs = ArrangeSlic(usernames, passwords, boombs)
 
 	for _,boomb := range *boombs {
 		crackdata := models.Try{targetinfo.Target, targetinfo.Port,targetinfo.Protocal, &boomb, false}
 		trys = append(trys, &crackdata)
 	}
+	return trys
+}
 
-	switch cmd {
 
-	case "ssh":
-		if err := brustype.Parse(os.Args[2:]); err == nil {
-			if !IsFileExists(*userdict) || !IsFileExists(*passwddict) {
-				fmt.Println("Please make sure your dict was exists")
-				os.Exit(0)
-			}
-			Fire(burp.SSHBrust, trys)
-			//fmt.Println("ssh brust",*userdict, *passwddict)
-		}
-	case "http":
-		if err := brustype.Parse(os.Args[2:]); err == nil {
-			if !IsFileExists(*userdict) || !IsFileExists(*passwddict) {
-				fmt.Println("Please make sure your dict was exists")
-				os.Exit(0)
-			}
-			Fire(burp.HTTPBrust, trys)
-			//fmt.Println("ssh brust",*userdict, *passwddict)
-		}
+func main() {
+
+
+	tragetPtr := flag.String("target", "", "Boombed target.")
+	userPtr := flag.String("user", "", "Boomb target's username or username file.")
+	passPtr := flag.String("pass", "", "Boomb target's password or password file.")
+	flag.Parse()
+
+	if *tragetPtr == "" || *userPtr =="" || *passPtr==""{
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	targetInfo := ParserTarget(*tragetPtr)
+	boombs := LoadAttack(*userPtr, *passPtr, targetInfo)
+
+	switch targetInfo.Protocal {
+	case "ssh": Fire(burp.SSHBrust, boombs)
+	case "http": Fire(burp.HTTPBrust, boombs)
 
 	default:
-		brustype.Usage()
-		fmt.Println("example: ")
-		fmt.Println("\tboomb ssh --user userdict --pass passdict")
-		fmt.Println("\tboomb http --user userdict --pass passdict")
+		fmt.Println("useage: ")
+		fmt.Println("\tboomb  --target http://127.0.0.1:8080 --user username --pass test/dict/pass.list")
+		fmt.Println("\tboomb --target ssh://127.0.0.1:2222 --user test/dict/user.list --pass test/dict/pass.list")
 
 	}
 }

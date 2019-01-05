@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5c1e224-7755-4f02-b899-0cbcd82b73be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/models.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/boohttp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/boohttp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dict/pass.list" beforeDir="false" afterPath="$PROJECT_DIR$/test/dict/pass.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dict/user.list" beforeDir="false" afterPath="$PROJECT_DIR$/test/dict/user.list" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,27 +16,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="146" column="27" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="30" />
+            <state relative-caret-position="360">
+              <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
               <folding>
                 <element signature="n#!!block;n#ArrangeSlic#0" />
-                <element signature="n#!!block;n#IsFileExists#0" />
                 <element signature="n#!!block;n#ReadDictFile#0" />
-                <element signature="n#!!block;n#ParserTarget#0" />
-                <element signature="e#1292#1309#0" />
+                <element signature="n#!!block;n#LoadAttack#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boossh.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/models.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="n#!!block;n#IsFileExists#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="boossh.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boossh.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="300">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -46,11 +54,8 @@
       <file leaf-file-name="boohttp.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boohttp.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-              <folding>
-                <element signature="e#14#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -68,6 +73,9 @@
     <findStrings>
       <find>fmt.Println</find>
       <find>fmt.</find>
+      <find>if err != nil</find>
+      <find>boombs</find>
+      <find>Target host</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -88,13 +96,14 @@
         <option value="$PROJECT_DIR$/test/utils.go" />
         <option value="$PROJECT_DIR$/test/auth.ticket" />
         <option value="$PROJECT_DIR$/src/boossh_test.go" />
-        <option value="$PROJECT_DIR$/config/models.go" />
         <option value="$PROJECT_DIR$/src/boohttp_test.go" />
         <option value="$PROJECT_DIR$/src/boossh.go" />
         <option value="$PROJECT_DIR$/test/dict/user.list" />
         <option value="$PROJECT_DIR$/test/dict/pass.list" />
-        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/cmd/root.go" />
         <option value="$PROJECT_DIR$/src/boohttp.go" />
+        <option value="$PROJECT_DIR$/config/models.go" />
+        <option value="$PROJECT_DIR$/main.go" />
       </list>
     </option>
   </component>
@@ -110,6 +119,9 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -133,17 +145,6 @@
               <item name="boomb" type="b2602c69:ProjectViewProjectNode" />
               <item name="boomb" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boomb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomb" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boomb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boomb" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="dict" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -190,15 +191,15 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.12447917" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1234375" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005208" side_tool="true" weight="0.32946146" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49947917" weight="0.0" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49947917" weight="0.32946146" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.1373494" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.26821542" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -240,20 +241,80 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4650">
+          <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!block;n#ArrangeSlic#0" />
+            <element signature="n#!!block;n#ReadDictFile#0" />
+            <element signature="n#!!block;n#LoadAttack#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boossh.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boohttp.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/root.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#13#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3510">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="n#!!block;n#ArrangeSlic#0" />
+            <element signature="n#!!block;n#ReadDictFile#0" />
+            <element signature="n#!!block;n#LoadAttack#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boossh.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boohttp.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4950">
           <caret line="165" column="38" lean-forward="true" selection-start-line="165" selection-start-column="38" selection-end-line="165" selection-end-column="38" />
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
-            <element signature="n#!!block;n#IsFileExists#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
-            <element signature="n#!!block;n#ParserTarget#0" />
-            <element signature="e#1292#1309#0" />
+            <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
         </state>
       </provider>
@@ -262,9 +323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#14#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -272,9 +330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="n#!!block;n#checkAuth#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -284,10 +339,8 @@
           <caret line="137" column="50" lean-forward="true" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
-            <element signature="n#!!block;n#IsFileExists#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
-            <element signature="n#!!block;n#ParserTarget#0" />
-            <element signature="e#1292#1309#0" />
+            <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
         </state>
       </provider>
@@ -307,27 +360,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boossh_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/models.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/boohttp_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="446">
           <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boossh_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boossh.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/root.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
-            <element signature="n#!!block;n#checkAuth#0" />
+            <element signature="e#13#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dict/pass.list">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -338,41 +405,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/dict/pass.list">
+    <entry file="file://$PROJECT_DIR$/src/boohttp.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="450">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boohttp.go">
+    <entry file="file://$PROJECT_DIR$/config/models.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="660">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
-            <element signature="e#14#63#0" expanded="true" />
+            <element signature="n#!!block;n#IsFileExists#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="146" column="27" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="30" />
+        <state relative-caret-position="360">
+          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
           <folding>
             <element signature="n#!!block;n#ArrangeSlic#0" />
-            <element signature="n#!!block;n#IsFileExists#0" />
             <element signature="n#!!block;n#ReadDictFile#0" />
-            <element signature="n#!!block;n#ParserTarget#0" />
-            <element signature="e#1292#1309#0" />
+            <element signature="n#!!block;n#LoadAttack#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/boossh.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
