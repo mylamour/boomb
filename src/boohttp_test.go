@@ -26,7 +26,7 @@ func checkAuth(w http.ResponseWriter, r *http.Request) bool {
 	return pair[0] == username && pair[1] == password
 }
 
-func Server() {
+func HTTPBasicAuthServer() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if checkAuth(w, r) {
 			w.Write([]byte("Cracked"))
@@ -42,7 +42,7 @@ func Server() {
 
 func TestHTTPBrust(t *testing.T) {
 	// Start HTTP Server
-	Server()
+	go HTTPBasicAuthServer()
 	// Begin To Burp
 	crackData := models.Boomb{"user","pass"}
 	testdata := models.Try{"127.0.0.1", "8080","http", &crackData, false}

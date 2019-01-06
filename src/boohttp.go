@@ -23,3 +23,8 @@ func HTTPBrust(try *Models.Try) *Models.Try{
 
 	return nil
 }
+
+func HTTPSBrust(try *Models.Try) *Models.Try {
+	//Todo Add Https basic auth brust
+	return nil
+}
