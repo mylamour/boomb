@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./config"
-	"./src"
+	"boomb/config"
+	"boomb/src"
 	"bufio"
 	"flag"
 	"fmt"
@@ -11,7 +11,6 @@ import (
 	"net/url"
 	"os"
 )
-
 func Fire( fire func(*models.Try) *models.Try, trys []*models.Try) *models.Boomb {
 	for _, try := range trys {
 		result := fire(try)

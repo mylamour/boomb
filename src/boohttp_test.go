@@ -1,7 +1,7 @@
 package burp
 
 import (
-	"../config"
+	"boomb/config"
 	"encoding/base64"
 	"net/http"
 	"strings"

@@ -1,7 +1,7 @@
 package burp
 
 import (
-	"../config"
+	"boomb/config"
 	"fmt"
 	"github.com/go-redis/redis"
 	"os"
