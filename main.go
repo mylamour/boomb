@@ -12,13 +12,32 @@ import (
 	"os"
 )
 func Fire( fire func(*models.Try) *models.Try, trys []*models.Try) *models.Boomb {
-	for _, try := range trys {
-		result := fire(try)
-		if result != nil && result.Status {
-			fmt.Println("[Target Cracked] \nusername:password = ", result.Data.Username,":",result.Data.Password)
-			return &models.Boomb{result.Data.Username,result.Data.Password}
+
+	res := make(chan *models.Try)
+
+	go func() {
+		for _, try := range trys {
+			res <- fire(try)
 		}
+	}()
+
+	select {
+		case result := <- res:
+			if result != nil && result.Status {
+				fmt.Println("[Target Cracked] \nusername:password = ", result.Data.Username, ":", result.Data.Password)
+				return &models.Boomb{result.Data.Username, result.Data.Password}
+			}
 	}
+
+
+	//for _, try := range trys {
+	//	result := fire(try)
+	//	if result != nil && result.Status {
+	//		fmt.Println("[Target Cracked] \nusername:password = ", result.Data.Username, ":", result.Data.Password)
+	//		return &models.Boomb{result.Data.Username, result.Data.Password}
+	//	}
+	//}
+
 	return nil
 }
 
