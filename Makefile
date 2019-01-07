@@ -9,7 +9,7 @@ BINARY_UNIX=$(BINARY_NAME)_unix
 
 all: test build
 build:
-	$(GOBUILD) -o bin/$(BINARY_NAME) -v
+	$(GOBUILD) -ldflags="-s -w" -o bin/$(BINARY_NAME) -v
 test:
 	$(GOTEST) -v ./...
 clean:
