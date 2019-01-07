@@ -85,6 +85,7 @@ LA93RBd7wkMeoXR+9PmrQDzbX1jxVNLFuwvWrkO1J5vmvic/CF5B3M7W
 
 func TestSSHBrust(t *testing.T) {
 	// Start SSH Server
+	// Or maybe you can start a local ssh server and comment this line
 	go SSHServer("hhh","lll","2222")
 
 	crackData := models.Boomb{"hhh","lll"}

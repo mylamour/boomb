@@ -1,12 +1,12 @@
 package burp
 
 import (
-	Models "../config"
+	"../config"
 	"net/http"
 	"log"
 )
 
-func HTTPBrust(try *Models.Try) *Models.Try{
+func HTTPBrust(try *models.Try) *models.Try{
 	//Basic Auth Brust
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", try.Protocal + "://" + try.Target + ":" + try.Port , nil)
@@ -24,7 +24,7 @@ func HTTPBrust(try *Models.Try) *Models.Try{
 	return nil
 }
 
-func HTTPSBrust(try *Models.Try) *Models.Try {
+func HTTPSBrust(try *models.Try) *models.Try {
 	//Todo Add Https basic auth brust
 	return nil
 }

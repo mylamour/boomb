@@ -2,7 +2,10 @@ package burp
 
 import (
 	"../config"
+	"fmt"
 	"golang.org/x/crypto/ssh"
+	"os"
+	"strings"
 )
 
 func SSHBrust (try *models.Try) *models.Try {
@@ -14,6 +17,12 @@ func SSHBrust (try *models.Try) *models.Try {
 	sshConfig.HostKeyCallback = ssh.InsecureIgnoreHostKey()
 
 	client, err := ssh.Dial("tcp", try.Target+":"+try.Port, sshConfig)
+
+	if strings.Contains(err.Error(),"connection refused"){
+		fmt.Println("[Error] target connection can't access")
+		os.Exit(1)
+	}
+
 
 	if err == nil {
 		_ = client

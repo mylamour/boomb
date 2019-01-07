@@ -39,3 +39,7 @@ func IsFileExists(filename string) bool {
 func IsPortOpen(port string){
 
 }
+
+func IsHostAccess(host string){
+
+}

@@ -142,11 +142,13 @@ func main() {
 	switch targetInfo.Protocal {
 	case "ssh": Fire(burp.SSHBrust, boombs)
 	case "http": Fire(burp.HTTPBrust, boombs)
+	case "redis": Fire(burp.REDISBrust, boombs)
 
 	default:
 		fmt.Println("useage: ")
 		fmt.Println("\tboomb  --target http://127.0.0.1:8080 --user yourusername --pass test/pass.list")
 		fmt.Println("\tboomb --target ssh://127.0.0.1:2222 --user test/user.list --pass yourpassword")
+		fmt.Println("\tboomb --target redis://127.0.0.1:6379 --user test/user.list --pass yourpassword")
 
 	}
 }
