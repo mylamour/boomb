@@ -4,7 +4,7 @@
 </p>
 
 
-> Burp force authority like boomb boomb boomb
+> Burp force a login like boomb boomb boomb
 
 
 This is my golang learning tour, logo generator from https://gopherize.me/
