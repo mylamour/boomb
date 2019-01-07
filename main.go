@@ -65,7 +65,7 @@ func ParserTarget(target string) models.Try {
 	host, port, _ := net.SplitHostPort(parser.Host)
 
 	if host == ""{
-		fmt.Println("Target Host is None")
+		fmt.Println("Target Host Not Right")
 		os.Exit(1)
 	}
 
@@ -107,7 +107,11 @@ func LoadAttack(userdict string, passdict string, targetinfo models.Try) []*mode
 		*usernames = append(*usernames, userdict)
 	}
 
-	passwords = ReadDictFile(passdict, passwords)
+	if models.IsFileExists(passdict) {
+		passwords = ReadDictFile(passdict, passwords)
+	}else {
+		*passwords = append(*passwords, passdict)
+	}
 
 	boombs = ArrangeSlic(usernames, passwords, boombs)
 
@@ -141,8 +145,8 @@ func main() {
 
 	default:
 		fmt.Println("useage: ")
-		fmt.Println("\tboomb  --target http://127.0.0.1:8080 --user username --pass test/dict/pass.list")
-		fmt.Println("\tboomb --target ssh://127.0.0.1:2222 --user test/dict/user.list --pass test/dict/pass.list")
+		fmt.Println("\tboomb  --target http://127.0.0.1:8080 --user yourusername --pass test/pass.list")
+		fmt.Println("\tboomb --target ssh://127.0.0.1:2222 --user test/user.list --pass yourpassword")
 
 	}
 }
