@@ -1,3 +1,14 @@
+
+<p align="center">
+  <img src="./boomb.png" />
+</p>
+
+
+> Burp force authority like boomb boomb boomb
+
+
+This is my golang learning tour, logo generator from https://gopherize.me/
+
 # Build
 
 run `make build` to build project, then you will get binaray in `bin` folder
@@ -13,9 +24,9 @@ need to configure your environment
 
 # ToDo
 
-* work poll
-* schedular task
-* retry 
-* queue
-* goroutoin
-* hasring or arrang slic?
+[ ] work poll
+[ ] schedular task
+[ ] retry 
+[ ] queue
+[x] goroutoin
+[x] hasring or arrang slic?
