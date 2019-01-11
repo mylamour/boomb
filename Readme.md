@@ -4,7 +4,7 @@
 </p>
 
 
-> Burp force a login like boomb boomb boomb
+> Brute force a login like boomb boomb boomb
 
 
 This is my golang learning tour, logo generator from https://gopherize.me/
@@ -24,9 +24,9 @@ need to configure your environment
 
 # ToDo
 
-[ ] work poll
-[ ] schedular task
-[ ] retry 
-[ ] queue
-[x] goroutoin
-[x] hasring or arrang slic?
+* [ ] work poll
+* [ ] schedular task
+* [ ] retry 
+* [ ] queue
+* [x] goroutoin
+* [x] hasring or arrang slic?
