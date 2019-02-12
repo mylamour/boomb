@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="./boomb.png" />
+  <img src="./boomb.png"  width=345/>
 </p>
 
 
